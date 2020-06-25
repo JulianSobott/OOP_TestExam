@@ -75,7 +75,7 @@ b) **Motorbike**: Extends `Vehicle`.
     - call super constructor
     - set `tiltAngle`
     
-- **Car()**
+- **Motorbike()**
     - Set all values to 0
     
 **public Methods**
