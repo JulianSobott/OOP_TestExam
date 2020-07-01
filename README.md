@@ -16,6 +16,8 @@ Create for every class/interface a new .java file (Standard in an IDE).
     git checkout submissions
     ```
 - Create a new folder inside the "submissions" folder with a unique name. e.g. Your "Matrikelnummer", name, a random string, ...
+- (IntelliJ only): Right click on this folder and select: *mark directory as* -> *sources root*. Now it should be marked blue.
+- (IntelliJ only): Do the same for all directories that were already marked blue, but this time select *unmark as sources root*.
 - Put all your java files in this folder.
 - Add all your .java files. (No .class files)
     ```bash
