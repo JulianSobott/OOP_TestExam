@@ -6,12 +6,22 @@ public class Motorbike extends Vehicle{
     private double tiltAngle;
 
     //Constructors
-    public Motorbike (double x, double y, double rotation){
+    public Motorbike (double x, double y, double rotation, double tiltAngle){
         super(x,y,rotation);
+        this.tiltAngle = tiltAngle;
+
     }
 
-    public Motorbike(){
-        super(0,0,0);
+    public Motorbike (){
+        this(0,0,0,0);
+    }
+
+    public void setTiltAngle(double tiltAngle){
+        this.tiltAngle = tiltAngle;
+    }
+
+    public double getTiltAngle(double tiltAngle){
+        return this.tiltAngle;
     }
 
     @Override

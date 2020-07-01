@@ -7,6 +7,12 @@ public abstract class Vehicle implements IRenderObject, IControllable{
     protected double positionY;
 
     //Constructors
+    public Vehicle(){
+        this.rotation = 0;
+        this.positionY = 0;
+        this.positionX = 0;
+    }
+
     public Vehicle (double x, double y, double rotation){
         this. rotation = rotation;
         this. positionX = x;

@@ -2,7 +2,7 @@ package CarRacingGame;
 
 public class Renderer {
     //Attributes
-    private IRenderObject[] Store = new IRenderObject[0];
+    private IRenderObject[] store = new IRenderObject[0];
 
     //Help-Methods  //Methods from Algorithm1 Stack-Exercise to expand and reduce the Array
 
@@ -65,19 +65,19 @@ public class Renderer {
         }
 
         int stored = -1;
-        for ( int i = 0; i < Store.length; i ++){
-            if ( Store [ i ] == null){
-                Store [i] = attachment;
+        for ( int i = 0; i < store.length; i ++){
+            if ( store [ i ] == null){
+                store [i] = attachment;
                 stored = i ;
                 break;
             }
         }
         if ( stored <= 0 ) {
-            Store = expand( Store , attachment);
-            stored = Store.length;
+            store = expand( store , attachment);
+            stored = store.length;
         }
 
-        return (Store[stored] == attachment);
+        return (store[stored] == attachment);
     }
 
     //Instead of setting the array-position to null, delete the array-position -> no unnecessary nulls in the array
@@ -93,9 +93,9 @@ public class Renderer {
         }
 
         boolean removed = false;
-        for ( int i = 0; i< Store.length; i++){
-            if ( Store[i] == delete ){
-                Store = reduce (Store, i);
+        for ( int i = 0; i< store.length; i++){
+            if ( store[i] == delete ){
+                store = reduce (store, i);
                 removed = true;
                 break;
             }
@@ -104,9 +104,9 @@ public class Renderer {
     }
 
     public void render(){
-        for (IRenderObject i : Store) {
+        for (IRenderObject i : store) {
             if (i != null) {
-                System.out.println(i);
+                i.render();
             }
         }
     }
