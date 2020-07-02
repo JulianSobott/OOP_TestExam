@@ -53,31 +53,35 @@ public class Renderer {
     //Methods
     //Exception just for training reasons
 
-    public boolean addRenderObject(IRenderObject attachment){
+    public boolean addRenderObject(IRenderObject attachment) {
 
-        try{
-            if (attachment == null){
+        try {
+            if (attachment == null) {
                 throw new NullIRenderObjectException();
             }
-        }catch (NullIRenderObjectException e){
+        } catch (NullIRenderObjectException e) {
             //e.printStackTrace();
             e.getMessage();
         }
 
-        int stored = -1;
-        for ( int i = 0; i < store.length; i ++){
-            if ( store [ i ] == null){
-                store [i] = attachment;
-                stored = i ;
-                break;
+        int space = -1;
+        for (int i = 0; i < store.length; i++) {
+            if (store[i] == null) {                                   //Check for empty space
+                space = i;
+            }
+            if (store[i] != null && store[i].equals(attachment)) {   //Object is already in the array
+                return false;
             }
         }
-        if ( stored <= 0 ) {
-            store = expand( store , attachment);
-            stored = store.length;
-        }
+        if (space != -1) {                                            //Object is not in the Array yet but there is an empty space
+            store[space] = attachment;
+            return true;
+        } else {                                                      //Object is neither in the Array nor there is space
 
-        return (store[stored] == attachment);
+            store = expand(store, attachment);
+            return (store[store.length - 1] == attachment);
+
+        }
     }
 
     //Instead of setting the array-position to null, delete the array-position -> no unnecessary nulls in the array

@@ -20,7 +20,7 @@ public class Motorbike extends Vehicle{
         this.tiltAngle = tiltAngle;
     }
 
-    public double getTiltAngle(double tiltAngle){
+    public double getTiltAngle(){
         return this.tiltAngle;
     }
 
